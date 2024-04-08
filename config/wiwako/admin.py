@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Category, Wiwako
-from carousel.models import CarouselItem
+from config.carousel.models import CarouselItem
 
 
 

@@ -1,5 +1,5 @@
 from django.db import models
-from categories.models import Category
+from config.categories.models import Category
 
 
 class Wiwako(models.Model):

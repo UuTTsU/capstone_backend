@@ -2,7 +2,7 @@ from rest_framework.generics import ListAPIView
 from rest_framework.pagination import PageNumberPagination
 # from rest_framework.response import Response
 from .models import Wiwako
-from carousel.models import CarouselItem
+from config.carousel.models import CarouselItem
 from .serializers import WiwakoSerializer, CarouselItemSerializer
 from django.db.models import Q
 from rest_framework.generics import RetrieveAPIView

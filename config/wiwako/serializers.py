@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Wiwako
-from carousel.models import CarouselItem
+from config.carousel.models import CarouselItem
 
 class WiwakoSerializer(serializers.ModelSerializer):
     class Meta:
