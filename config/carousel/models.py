@@ -1,6 +1,6 @@
 from django.db import models
 from PIL import Image
-from wiwako.models import Wiwako
+from config.wiwako.models import Wiwako
 import os
 
 def carousel_photo_path(instance, filename):
