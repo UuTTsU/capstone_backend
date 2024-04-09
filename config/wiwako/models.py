@@ -1,16 +1,17 @@
 from django.db import models
-from config.categories.models import Category
+from categories.models import Category
 
+class Photo(models.Model):
+    image = models.ImageField(upload_to="wiwakebi_photos/")
+    wiwako = models.ForeignKey('Wiwako', on_delete=models.CASCADE, related_name='photos')
 
 class Wiwako(models.Model):
-    saxeli_qartulad = models.CharField(max_length=50)
-    saxeli_inglisurad = models.CharField(max_length=50)
-    agwera = models.TextField(null=True)
-    maragshia = models.BooleanField(default=True)
-    fasi = models.FloatField()
-    photo = models.ImageField(upload_to="wiwakebi/")
+    Eng_name = models.CharField(max_length=50)
+    Geo_name = models.CharField(max_length=50)
+    description = models.TextField(null=True)
+    in_stock = models.BooleanField(default=True)
+    Price = models.DecimalField(max_digits=10, decimal_places=2)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.saxeli_qartulad
-
+        return self.Geo_name
