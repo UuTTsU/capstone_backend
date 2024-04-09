@@ -48,7 +48,7 @@ class ProductPageAPIView(ListAPIView):
         
         if price_range:
             min_price, max_price = map(float, price_range.split('-'))
-            queryset = queryset.filter(fasi__gte=min_price, fasi__lte=max_price).order_by("-fasi")
+            queryset = queryset.filter(Price__gte=min_price, Price__lte=max_price).order_by("-fasi")
         
         return queryset
 
@@ -62,7 +62,7 @@ class SearchResultsAPIView(ListAPIView):
         
          if query:
             queryset = queryset.filter(
-                 Q(saxeli_qartulad__icontains=query) | Q(saxeli_inglisurad__icontains=query)
+                 Q(Geo_name__icontains=query) | Q(Eng_name__icontains=query)
              )
         
          return queryset
