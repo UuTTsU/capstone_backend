@@ -46,9 +46,6 @@ class ProductPageAPIView(ListAPIView):
         if category_name:
             queryset = queryset.filter(category__name=category_name)
         
-        if price_range:
-            min_price, max_price = map(float, price_range.split('-'))
-            queryset = queryset.filter(Price__gte=min_price, Price__lte=max_price).order_by("-fasi")
         
         return queryset
 
