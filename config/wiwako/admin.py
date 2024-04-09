@@ -6,9 +6,9 @@ from config.carousel.models import CarouselItem
 
 @admin.register(Wiwako)
 class WiwakoAdmin(admin.ModelAdmin):
-    list_display = ['saxeli_qartulad', 'saxeli_inglisurad', 'category', 'maragshia', 'fasi']
-    list_filter = ['category', 'maragshia']
-    search_fields = ['saxeli_qartulad', 'saxeli_inglisurad']
+    list_display = ['Geo_name', 'Eng_name', 'category', 'in_stock', 'Price']
+    list_filter = ['category', 'in_stock']
+    search_fields = ['Geo_name', 'Eng_name']
     list_per_page = 20
 
 
